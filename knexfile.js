@@ -5,17 +5,15 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './data/connection.js'
+      filename: './data/cooking.db3'
     },
     useNullAsDefault: true,
     migrations: {
       directory: './data/migrations'
     },
-    pool: {
-      afterCreate: function(conn, done) {
-        conn.run("PRAGMA foreign_keys = ON", done);
-      }
-    }
+    seeds: {
+      directory: './data/seeds',
+    },
   },
 
   staging: {
